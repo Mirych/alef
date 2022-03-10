@@ -1,13 +1,13 @@
 <template>
   <div class="about">    
     <h2>Персональные данные</h2>
-    <p class="bold">{{ data.name + ',' + data.age }}</p>
+    <p class="bold">{{ profile.name + ', ' + profile.age }}</p>
     
     <div class="preview-childrens">
       <h2>Дети</h2>
-      <div v-for="children in data.childrens" :key="children">
+      <div v-for="children in profile.childrens" :key="children">
         <p class="child bold">
-        {{ children.name + ',' + children.age }}
+        {{ children.name + ', ' + children.age }}
         </p>
     </div>
     </div>
@@ -18,12 +18,12 @@
 export default {
   data() {
     return {
-      data: {}
+      profile: {}
     }
   },
   mounted() {
-    if (localStorage.data) {
-      this.data = JSON.parse(localStorage.data)
+    if (localStorage.profile) {
+      this.profile = JSON.parse(localStorage.profile)
     }    
   },
 }
